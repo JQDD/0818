@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <title>学员管理</title>
+  <link rel="stylesheet" href="/css/pintuer.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/students.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/pintuer.js"></script>
+  <script src="/js/students.js"></script>
+</head>
+
+<body>
+  <div class="mb">
+    <div class="panel admin-panel">
+    <div class="panel-head"><strong><span class="icon-key"></span> 修改会员密码</strong></div>
+    <div class="body-content">
+      <form method="post" class="form-x" action="">
+        <div class="form-group">
+          <div class="label">
+            <label for="sitename">管理员帐号：</label>
+          </div>
+          <div class="field">
+            <label style="line-height:33px;">
+              admin
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label">
+            <label for="sitename">原始密码：</label>
+          </div>
+          <div class="field">
+            <input type="password" class="input w50" id="mpass" name="mpass" size="50" placeholder="请输入原始密码"
+              data-validate="required:请输入原始密码" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label">
+            <label for="sitename">新密码：</label>
+          </div>
+          <div class="field">
+            <input type="password" class="input w50" name="newpass" size="50" placeholder="请输入新密码"
+              data-validate="required:请输入新密码,length#>=5:新密码不能小于5位" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label">
+            <label for="sitename">确认新密码：</label>
+          </div>
+          <div class="field">
+            <input type="password" class="input w50" name="renewpass" size="50" placeholder="请再次输入新密码"
+              data-validate="required:请再次输入新密码,repeat#newpass:两次输入的密码不一致" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="label">
+            <label></label>
+          </div>
+          <div class="field">
+            <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <!-- <input type="text" id="age"> <button id="change_sure">确认</button> -->
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 学员信息</strong></div>
+    <div class="padding border-bottom">
+      <ul class="search">
+        <li>
+          <button type="button" class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
+          <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
+        </li>
+      </ul>
+    </div>
+    <table id="stu_list" class="table table-hover text-center">
+      <tr>
+        <th width="5%">ID</th>
+        <th width="10%">姓名</th>
+        <th width="5%">年龄</th>
+        <th width="12%">电话</th>
+        <th width="13%">邮箱</th>
+        <th width="25%">地址</th>
+        <th width="10%">报名时间</th>
+        <th width="20%">操作</th>
+      </tr>
+    </table>
+    <table class="table text-center">
+      <tr>
+        <td colspan="8">
+          <div class="pagelist">
+            <a href="">上一页</a>
+            <a>1</a><a>2</a><a>3</a>
+            <a>下一页</a>
+            <a>尾页</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <table id="model">
+    <tr class="moban">
+      <td><input type="checkbox" name="id[]" value="1" />$id$</td>
+      <td class="username">$name$</td>
+      <td class="age">$age$</td>
+      <td class="tel">$tel$</td>
+      <td class="email">$email$</td>
+      <td class="address">$address$</td>
+      <td class="date">$date$</td>
+      <td>
+        <button class="edit button border-green changeout"><span class="icon-edit"></span> 编辑</button>
+        <button class="del button border-red"><span class="icon-trash-o"></span>删除</button>
+      </td>
+    </tr>
+  </table>
+  <div class="mask">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>年龄: </a><input type="text" id="gage"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>电话: </a><input type="text" id="gtel"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>邮箱: </a><input type="text"
+      id="gemail"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>地址: </a><input type="text"
+      id="gaddress"><br>
+    <button class="gsure">确认</button>
+  </div>
+  <!-- 修改 -->
+  
+</body>
+
+</html>
